@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   english_words: ^4.0.0
   get: ^4.6.5
+  dartzmq: ^1.0.0-dev.13
 
 dev_dependencies:
   flutter_test:

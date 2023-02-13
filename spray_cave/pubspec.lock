@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  dartzmq:
+    dependency: "direct main"
+    description:
+      name: dartzmq
+      sha256: "966828d564f2fb61e7710d1298847b92b9fb16825faa9a608c22a6f7674ff5a5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0-dev.13"
   english_words:
     dependency: "direct main"
     description:
@@ -65,6 +73,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  ffi:
+    dependency: transitive
+    description:
+      name: ffi
+      sha256: a38574032c5f1dd06c4aee541789906c12ccaab8ba01446e800d9c5b79c4a978
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -202,3 +218,4 @@ packages:
     version: "2.1.4"
 sdks:
   dart: ">=2.19.0 <4.0.0"
+  flutter: ">=1.20.0"
