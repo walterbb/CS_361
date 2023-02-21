@@ -4,8 +4,8 @@
 # Spray Cave Climbing App
 An app to upload and view custom rock climbs for the Dixon cave climbing wall.
 
-# Climb Data Microservice
-A microservice to store and send data for custom climbs. Uses zeromq to communicate over a network.
+# Mortgage Rate Microservice
+A microservice to calculate mortgage rate based on credit score.
 
 # Connect to server
 import zmq
@@ -15,22 +15,20 @@ socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 
 # Sending requests
-Requests are made using json objects. The first key of this object is "method", which can be either "add" or "get.
+To make a request, send a string containing the credit score to the server.
 
-# Add method
-The add method requires one more key, which is "data". The value of this key needs to be a json object containing data for a climb.
-The microservice will respond with a json object containing the status of the request, which will either be "success", or "fail" if the data couldn't be stored.
+Example:
+socket.send_string("650")
 
-Example usage:
-socket.send_json({"method": "add", "data": climb})
-response = socket.recv_json()
+# Receiving response
+To receive the response, wait for a string containing the mortage rate from the server.
 
-where climb is an object containing json data
+Example:
+response = socket.recv_string()
 
-# Get method
-The get method requests all of the data stored by the microservice.
-The microservice will respond with the json object containing this data (stored objects in an array called "climbData")
+# Close connect
+To close and unbind the socket once done, you can run the following:
 
-Example usage:
-socket.send_json({"method": "get"})
-response = socket.recv_json()
+socket.unbind("tcp://localhost:5555")
+socket.close()
+context.term()
